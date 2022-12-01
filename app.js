@@ -1,9 +1,12 @@
+//declaring some arrays for our deck related functions
 let suits = ["clubs", "spades", "hearts", "diamonds"]
 let colors = ["black", "red"]
 let shuffledDeck = []
 let deck = [];
+let player1Hand = []; 
+let player2Hand = []; 
 
-
+//creating a class for the cards, which are objects stored in an array 
 class card {
     constructor(number, suit, color) {
         this.number = number; 
@@ -13,7 +16,6 @@ class card {
 }
 
 //WORKING -- RETURNS AN ARRAY OF CARDS BASED ON THE CARD CLASS
-//CREATES 56 CARDS INSTEAD OF 52
 function newDeck ( ) {
 
         //THIS FOR LOOP CREATES THE BLACK CARDS: CLUBS AND SPADES
@@ -38,7 +40,6 @@ function newDeck ( ) {
      return deck;
 }
 
-
 // this function randomizes the deck array created by the newDeck function
 function shuffle(newDeck) {
     while (newDeck.length > 0) {
@@ -50,8 +51,20 @@ function shuffle(newDeck) {
     return shuffledDeck; 
 }
 
-// console.log(newDeck()); 
-// shuffle(newDeck());
-// console.log(shuffledDeck.length);
+//dealing function which creates two arrays of three card objects each 
+function deal(deck) {
+    //setting up a loop that will give us 3 cards in each hand
+    for (i = 0; i <= 2; i ++) {
+        let x = Math.floor(Math.random( ) * deck.length); 
+        player1Hand.push(deck[x]);
+        //this splice removes the card from the deck so that it is not duplicated in the into the other player's hand
+        deck.splice(x, 1);
+        let y = Math.floor(Math.random( ) * deck.length); 
+        player2Hand.push(deck[y]);
+    }
+    console.log(player1Hand); 
+    console.log(player2Hand);
+}
 
-console.log(shuffle(newDeck()).length)
+//passing a shuffled deck to the deal function- it's just referred to as deck in the function for simplicity
+deal(shuffle(newDeck())); 
