@@ -34,17 +34,19 @@ function newDeck ( ) {
                 deck.push(newCard); 
             }
         }
-    return deck;
+     return deck;
+ 
 }
 
 
     // this function randomizes the deck array created by the newDeck function
     function shuffle(newDeck) {
         for (i = 0; i <= newDeck.length; i++) {
-            let x = Math.random( )*newDeck.length; 
-            shuffledDeck.splice(x, 0, newDeck[x]);
-            newDeck.splice(x, 1); 
+            let x = Math.floor(Math.random( ) * newDeck.length); 
+            shuffledDeck.push(newDeck[x]);
         } 
     }
 
-    console.log(typeof deck)
+// console.log(newDeck()); 
+shuffle(newDeck())
+console.log(shuffledDeck);
