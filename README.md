@@ -1,14 +1,16 @@
-☐ **<Your game's title>**: A description of your game. Background info of the game is a nice touch.
+☐ **Game: High Card **
 
-Game: High Card 
+This game works by comparing the highest card from two player controlled hands. It does this by creating a deck of cards, shuffling it, and then dealing 3 random cards to each player. The game repeats this every hand, while keeping track of the score consistantly. 
 
-Technology Used: JS (nested objects, classes, event listeners, query selectors), HTML (DOM manipulation, CSS (flex box). 
 
-☐ **Getting Started**: In this section include the link to your deployed game and any instructions you deem important.
+**Technology Used:**
+JS (nested objects, classes, event listeners, query selectors), HTML (DOM manipulation, CSS (flex box). 
 
+☐ **Link to deployed game:  https://alpakas96.github.io/high-card/Started**: 
 
 
 ☐ **Next Steps**: Planned future enhancements (icebox items).
+therapy
 
 Here are some screen shots showing the game in varying states and different sized windows: 
 
