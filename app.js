@@ -8,8 +8,15 @@ let player2Hand = [];
 let player1HighCard; 
 let player2HighCard; 
 
-//UNCOMMENT THIS WHEN APP.JS IS FIXED: 
-// let results = document.querySelector('.results'); 
+//Declaring these variables to manipulate the dom 
+let results = document.querySelector('.results'); 
+let player1Score = document.querySelector(`.player1Score`); 
+let player2Score = document.querySelector(`.player2Score`); 
+let draws = document.querySelector(`.draws`);
+
+let a = 0; 
+let b = 0; 
+let c = 0; 
 
 //creating a class for the cards, which are objects stored in an array 
 class card {
@@ -72,49 +79,50 @@ function deal(deck) {
     // console.log(player2Hand); 
 }
 
-// will get the highest number from each hand, and then compare them to determine 
+// WORKING will get the highest number from each hand, and then compare them to determine the winner
 function compareHands( ) {
+
     player1HighCard = Math.max(player1Hand[0].number, player1Hand[1].number, player1Hand[2].number); 
     player2HighCard = Math.max(player2Hand[0].number, player2Hand[1].number, player2Hand[2].number); 
 
     if (player1HighCard > player2HighCard){
-        
         for (let i = 0; i <= player1Hand.length - 1; i++) {
             if (player1Hand[i].number == player1HighCard) {
                 results.textContent = `Player 1  won with a ${player1Hand[i].color} ${player1Hand[i].number} of ${player1Hand[i].suit}.`
+                a = a + 1;
+                player1Score.textContent = a; 
             }
         }
     }
 
     if (player1HighCard < player2HighCard){
-        
         for (let i = 0; i <= player2Hand.length - 1; i++) {
             if (player2Hand[i].number == player2HighCard) {
-                results.textContent = `Player 1  won with a ${player2Hand[i].color} ${player2Hand[i].number} of ${player2Hand[i].suit}.`
+                results.textContent = `Player 2  won with a ${player2Hand[i].color} ${player2Hand[i].number} of ${player2Hand[i].suit}.`
+                b = b+1; 
+                player2Score.textContent = b;
             }
-        }
+        }      
     }
 
     //this is incase of ties
     if (player1HighCard == player2HighCard) {
-        results.textContent(`It's a tie. Player 1's highcard is a ${player1HighCard.color} ${player1HighCard.number} of ${player1HighCard.suit}, and Player 2's highcard is a ${player2HighCard.color} ${player2HighCard.number} of ${player2HighCard.suit}.`)
+        for (let i = 0; i<= 2; i++) {
+            if (player1Hand[i].number == player1HighCard && player2Hand[i].number == player2HighCard) {
+                results.textContent = `It's a tie. Player 1's highcard is a ${player1Hand[i].color} ${player1Hand[i].number} of ${player1Hand[i].suit}, and Player 2's highcard is a ${player2Hand[i].color} ${player2Hand[i].number} of ${player2Hand[i].suit}.`
+                c = c +1; 
+                draws.textContent = c; 
+            }
+        }
+        
     }
 }
 
-function playGame() {
-    deal(shuffle(newDeck( ))); 
-    compareHands(); 
-}
+//this creates two random hands as two different arrays holding 3 objects (the cards) each
+deal(shuffle(newDeck( )));
+//this compares the hands and determines the winner
+compareHands();
 
-//this creates two random hands
-deal(shuffle(newDeck()));
-
-
-
-
-// have two scoreboard elements
-// capture each in a variable 
-// update the text of each element with the score based on the compareHands() function 
 
 
 
