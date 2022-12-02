@@ -7,7 +7,9 @@ let player1Hand = [];
 let player2Hand = []; 
 let player1HighCard; 
 let player2HighCard; 
-let results = document.querySelector('.results'); 
+
+//UNCOMMENT THIS WHEN APP.JS IS FIXED: 
+// let results = document.querySelector('.results'); 
 
 //creating a class for the cards, which are objects stored in an array 
 class card {
@@ -54,6 +56,7 @@ function shuffle(newDeck) {
     return shuffledDeck; 
 }
 
+// WORKING -- MUST RUN AS deal(shuffle(newDeck()));
 // dealing function which creates two arrays of three card objects each 
 function deal(deck) {
     //setting up a loop that will give us 3 cards in each hand
@@ -64,11 +67,10 @@ function deal(deck) {
         deck.splice(x, 1);
         let y = Math.floor(Math.random( ) * deck.length); 
         player2Hand.push(deck[y]);
-    }
-    
+    } 
+    // console.log(player1Hand); 
+    // console.log(player2Hand); 
 }
-
-
 
 // will get the highest number from each hand, and then compare them to determine 
 function compareHands( ) {
@@ -104,7 +106,11 @@ function playGame() {
     compareHands(); 
 }
 
-console.log(playGame());
+//this creates two random hands
+deal(shuffle(newDeck()));
+
+
+
 
 // have two scoreboard elements
 // capture each in a variable 
