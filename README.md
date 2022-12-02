@@ -6,7 +6,7 @@ This game works by comparing the highest card from two player controlled hands. 
 **Technology Used:**
 JS (nested objects, classes, event listeners, query selectors), HTML (DOM manipulation, CSS (flex box). 
 
-☐ **Link to deployed game:  https://alpakas96.github.io/high-card/Started**: 
+☐ **Link to deployed game:  https://alpakas96.github.io/high-card 
 
 
 ☐ **Next Steps**: therapy
