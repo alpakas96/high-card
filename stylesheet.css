@@ -1,3 +1,33 @@
 h1 {
     color: red;
 }
+
+.flex-container {
+    display: flex; 
+    background-color: darkgreen;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    flex-direction: row;
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column; 
+    display: flex; 
+    margin: 50px; 
+    background-color: bisque;
+    padding: 10px; 
+}
+
+#button {
+    margin: 20px;
+}
+
+h3, .results{
+    background-color: aliceblue;
+    padding: 10px;
+}

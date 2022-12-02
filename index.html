@@ -9,17 +9,19 @@
     <title>1114 Tic Tac Toe</title>
 </head>
 <body>
-    <h1>High Card</h1>
+    <div class="flex-container">
+        <h1>High Card</h1>
 
-    <h2 >Player 1 Wins: <p class = "player1Score">0</p></h2>
-    <h2 >Player 2 Wins: <div class = "player2Score">0</div></h2>
-    <h3>Draws: <p class="draws">0</p></h3>
+        <div class="flex-row">
 
-    <div class="results">
+            <div class="flex-column"><h2 >Player 1 Wins: <div class = "player1Score">0</div></h2></div>
+            <div class="flex-column"><h2 >Player 2 Wins: <div class = "player2Score">0</div></h2></div>
+
+        </div>
+
+        <h3>Draws: <p class="draws">0</p></h3>
+        <div class="results"></div>
+        <button id="button">New Hand</button>
     </div>
-
-    <button id="button">Click Me!</button>
-
-    
 </body>
 </html>
