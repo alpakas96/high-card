@@ -9,8 +9,7 @@ JS (nested objects, classes, event listeners, query selectors), HTML (DOM manipu
 ☐ **Link to deployed game:  https://alpakas96.github.io/high-card/Started**: 
 
 
-☐ **Next Steps**: Planned future enhancements (icebox items).
-therapy
+☐ **Next Steps**: therapy
 
 Here are some screen shots showing the game in varying states and different sized windows: 
 
