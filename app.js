@@ -1,6 +1,8 @@
-//declaring some arrays for our deck related functions
-let suits = ["clubs", "spades", "hearts", "diamonds"]
-let colors = ["black", "red"]
+// variables that never change
+const suits = ["clubs", "spades", "hearts", "diamonds"]
+const colors = ["black", "red"]
+
+
 let shuffledDeck = []
 let deck = [];
 let player1Hand = []; 
@@ -89,8 +91,9 @@ function compareHands( ) {
         for (let i = 0; i <= player1Hand.length - 1; i++) {
             if (player1Hand[i].number == player1HighCard) {
                 results.textContent = `Player 1  won with a ${player1Hand[i].color} ${player1Hand[i].number} of ${player1Hand[i].suit}.`
-                a = a + 1;
+                a++;
                 player1Score.textContent = a; 
+                
             }
         }
     }
@@ -99,8 +102,9 @@ function compareHands( ) {
         for (let i = 0; i <= player2Hand.length - 1; i++) {
             if (player2Hand[i].number == player2HighCard) {
                 results.textContent = `Player 2  won with a ${player2Hand[i].color} ${player2Hand[i].number} of ${player2Hand[i].suit}.`
-                b = b+1; 
+                b++; 
                 player2Score.textContent = b;
+                
             }
         }      
     }
@@ -110,19 +114,29 @@ function compareHands( ) {
         for (let i = 0; i<= 2; i++) {
             if (player1Hand[i].number == player1HighCard && player2Hand[i].number == player2HighCard) {
                 results.textContent = `It's a tie. Player 1's highcard is a ${player1Hand[i].color} ${player1Hand[i].number} of ${player1Hand[i].suit}, and Player 2's highcard is a ${player2Hand[i].color} ${player2Hand[i].number} of ${player2Hand[i].suit}.`
-                c = c +1; 
-                draws.textContent = c; 
+                c++;  
+                draws.textContent = c
             }
         }
         
     }
 }
 
-//this creates two random hands as two different arrays holding 3 objects (the cards) each
-deal(shuffle(newDeck( )));
-//this compares the hands and determines the winner
-compareHands();
+function reset () {
+    shuffledDeck = []
+    deck = [];
+    player1Hand = []; 
+    player2Hand = []; 
+    player1HighCard; 
+    player2HighCard; 
+}
 
-
-
+const element = document.getElementById("button");
+element.addEventListener("click", function() {
+    //this creates two random hands as two different arrays holding 3 objects (the cards) each
+    deal(shuffle(newDeck( )));
+    //this compares the hands and determines the winner
+    compareHands();
+    reset(); 
+});
 
